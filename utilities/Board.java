@@ -1,5 +1,15 @@
+package utilities;
 public class Board{
-  public void print(int[][] grid){
+  int[][] grid;
+  public Board(int rows, int columns){
+    grid = new int[rows][columns];
+    for(int i=0; i<rows; i++){
+      for(int j=0; j<columns; j++){
+        grid[i][j] = 0;
+      }
+    }
+  }
+  public void print(){
     for(int i=0; i<grid.length; i++){
       for(int j=0; j<grid[i].length; j++){
         if(j==grid[i].length-1) System.out.println(toPiece(grid[i][j]));
@@ -20,14 +30,19 @@ public class Board{
     if(character>=21 && character<=33) return "X";
     else return null;
   }
-  public int[][] prepBoard(int[][] grid){
-    int[][] output = new int[grid.length][grid[0].length];
+  public void prepBoard(){
     for(int i=0; i<grid.length; i++){
       for(int j=0; j<grid[i].length; j++){
-        if((i==4 || i==5) && (j==3 ||j==4 || j==7 || j==8)) output[i][j] = 0;
-        else output[i][j] = 14;
+        if((i==3 || i==4) && (j==2 ||j==3 || j==6 || j==7)) grid[i][j] = 0;
+        else grid[i][j] = 14;
       }
     }
-    return output;
+  }
+  public void test(){
+    for(int i=0; i<grid.length; i++){
+      for(int j=0; j<grid[i].length; j++){
+        System.out.println(grid[i][j]);
+      }
+    }
   }
 }

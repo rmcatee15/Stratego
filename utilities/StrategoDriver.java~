@@ -1,4 +1,6 @@
-
+import utilities.Board;
 public class StrategoDriver{
-  
+  public Board grid = new Board(8,10);
+  grid.prepBoard();
+  grid.print();
 }

@@ -1,4 +1,36 @@
-import utilities.StrategoDriver;
+package utilities;
 public class Board{
-  
+  int[][] grid;
+  public Board(int rows, int columns){
+    int[][] grid = new int[rows][columns];
+  }
+  public void print(){
+    for(int i=0; i<grid.length; i++){
+      for(int j=0; j<grid[i].length; j++){
+        if(j==grid[i].length-1) System.out.println(toPiece(grid[i][j]));
+        else{
+          System.out.print(toPiece(grid[i][j]));
+          if(grid[i][j]==10) System.out.print(" ");
+        }
+      }
+    }
+  }
+  private String toPiece(int character){
+    if(character==14) return "-";
+    if(character==0) return "O";
+    if(character==11) return "S";
+    if(character==12) return "B";
+    if(character==13) return "F";
+    if(character>=1 && character<=10) return Integer.toString(character);
+    if(character>=21 && character<=33) return "X";
+    else return null;
+  }
+  public void prepBoard(){
+    for(int i=0; i<grid.length; i++){
+      for(int j=0; j<grid[i].length; j++){
+        if((i==4 || i==5) && (j==3 ||j==4 || j==7 || j==8)) grid[i][j] = 0;
+        else grid[i][j] = 14;
+      }
+    }
+  }
 }
