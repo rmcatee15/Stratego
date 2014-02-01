@@ -15,7 +15,7 @@ public class Board{
         if(j==grid[i].length-1) System.out.println(toPiece(grid[i][j]));
         else{
           System.out.print(toPiece(grid[i][j]));
-          if(grid[i][j]==10) System.out.print(" ");
+          if(grid[i][j]!=10) System.out.print(" ");
         }
       }
     }
@@ -38,11 +38,13 @@ public class Board{
       }
     }
   }
-  public void test(){
-    for(int i=0; i<grid.length; i++){
-      for(int j=0; j<grid[i].length; j++){
-        System.out.println(grid[i][j]);
-      }
-    }
+  public static boolean isValid(int row, int column){
+    if(row<0 || row>7) return false;
+    if(column<0 || column >9) return false;
+    if((row==3 || row==4) && (column==2 || column==3 || column==6 || column==7)) return false;
+    return true;
+  }
+  public void draw(int type, int row, int column){
+    grid[row][column]=type;
   }
 }

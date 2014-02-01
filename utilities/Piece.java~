@@ -1,14 +1,10 @@
-package utilities;
 import utilities.Board;
 public class Piece{
   int type, row, column;
-  boolean hasShown = false;
-  boolean team;//true=computer, false=player
-  public Piece(int i, int r, int c, boolean t){
+  public Piece(int i, int r, int c){
     type = i;
     row = r;
     column = c;
-    team = t;
   }
   public boolean move(int direction){
     int testRow = row;
@@ -26,10 +22,4 @@ public class Piece{
   }
   public int getRow(){return row;}
   public int getColumn(){return column;}
-  public boolean getTeam(){return team;}
-  public int getType(boolean t){
-    if(team==t) return type;
-    else if(hasShown) return type;
-    else return 15;
-  }
 }
