@@ -1,0 +1,25 @@
+import utilities.Board;
+public class Piece{
+  int type, row, column;
+  public Piece(int i, int r, int c){
+    type = i;
+    row = r;
+    column = c;
+  }
+  public boolean move(int direction){
+    int testRow = row;
+    int testColumn = column;
+    if(direction == 1) testRow-=1;
+    else if(direction==2) testColumn+=1;
+    else if(direction==3) testRow+=1;
+    else if(direction==4) testColumn-=1;
+    if(Board.isValid(testRow, testColumn)){
+      row = testRow;
+      column = testColumn;
+      return true;
+    }
+    return false;
+  }
+  public int getRow(){return row;}
+  public int getColumn(){return column;}
+}
