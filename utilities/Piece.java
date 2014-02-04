@@ -1,16 +1,18 @@
 package utilities;
 import utilities.Board;
 public class Piece{
-  int type, row, column;
+  int type, row, column, value;
   boolean hasShown = false;
-  boolean team;//true=computer, false=player
-  public Piece(int i, int r, int c, boolean t){
+  boolean isAlive=true;
+  public Piece(int i, int r, int c){
     type = i;
     row = r;
     column = c;
-    team = t;
+    if(type>20) value=type-20;
+    value=type;
   }
   public boolean move(int direction){
+    if (!isAlive) return false;
     int testRow = row;
     int testColumn = column;
     if(direction == 1) testRow-=1;
@@ -24,12 +26,13 @@ public class Piece{
     }
     return false;
   }
+  public void removeSelfFromGrid(){
+    row=null;
+    column=null;
+  }
   public int getRow(){return row;}
   public int getColumn(){return column;}
-  public boolean getTeam(){return team;}
   public int getType(boolean t){
-    if(team==t) return type;
-    else if(hasShown) return type;
-    else return 15;
+    return type;
   }
 }

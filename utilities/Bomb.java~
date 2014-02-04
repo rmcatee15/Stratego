@@ -1,0 +1,6 @@
+package utilities;
+import utilities.Board;
+import utilities.StrategoDriver;
+public class Bomb extends Piece{
+  
+}

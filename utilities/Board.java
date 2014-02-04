@@ -39,6 +39,9 @@ public class Board{
       }
     }
   }
+  public int getPiece(int r,int c){
+    return grid[r][c];
+  }
   public static boolean isValid(int row, int column){
     if(row<0 || row>7) return false;
     if(column<0 || column >9) return false;

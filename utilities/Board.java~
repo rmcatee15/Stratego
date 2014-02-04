@@ -19,6 +19,7 @@ public class Board{
         }
       }
     }
+    System.out.println(" ");
   }
   private String toPiece(int character){
     if(character==14) return "-";

@@ -1,0 +1,11 @@
+package utilities;
+import utilities.Board;
+import utilities.StrategoDriver;
+public class Flag extends Piece{
+  public Flag(int r, int c, int t){
+    row=r;
+    column=c;
+    type=t;
+    value=0;
+  }
+}
