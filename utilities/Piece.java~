@@ -27,8 +27,9 @@ public class Piece{
     return false;
   }
   public void removeSelfFromGrid(){
-    row=null;
-    column=null;
+    isAlive=false;
+    row=99;
+    column=99;
   }
   public int getRow(){return row;}
   public int getColumn(){return column;}

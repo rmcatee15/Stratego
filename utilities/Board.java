@@ -48,7 +48,7 @@ public class Board{
     if((row==3 || row==4) && (column==2 || column==3 || column==6 || column==7)) return false;
     return true;
   }
-  public void draw(int type, int row, int column){
-    grid[row][column]=type;
+  public void draw(Piece p){
+    grid[p.getRow()][p.getColumn()]=p.getType();
   }
 }

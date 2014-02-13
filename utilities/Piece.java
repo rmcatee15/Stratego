@@ -33,7 +33,7 @@ public class Piece{
   }
   public int getRow(){return row;}
   public int getColumn(){return column;}
-  public int getType(boolean t){
+  public int getType(){
     return type;
   }
 }

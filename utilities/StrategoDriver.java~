@@ -3,21 +3,77 @@ import utilities.Board;
 import utilities.Piece;
 public class StrategoDriver{
   public static void main(String[] args){
+    Piece[] compPieces = new Piece[30];
+    Piece[] playerPieces = new Piece[30];
+    compPieces[0] = new Flag(33, 0, 0);
+    compPieces[1] = new Spotter(21, 0, 1);
+    compPieces[2] = new Spotter(21, 0, 2);
+    compPieces[3] = new Scout(22, 0, 3);
+    compPieces[4] = new Scout(22, 0, 4);
+    compPieces[5] = new Scout(22, 0, 5);
+    compPieces[6] = new Scout(22, 0, 6);
+    compPieces[7] = new Scout(22, 0, 7);
+    compPieces[8] = new Miner(23, 0, 8);
+    compPieces[9] = new Miner(23, 0, 9);
+    compPieces[10] = new Miner(23, 1, 0);
+    compPieces[11] = new Miner(23, 1, 1);
+    compPieces[12] = new Miner(23, 1, 2);
+    compPieces[13] = new Piece(24, 1, 3);//4
+    compPieces[14] = new Piece(24, 1, 4);//4
+    compPieces[15] = new Piece(25, 1, 5);//5
+    compPieces[16] = new Piece(25, 1, 6);//5
+    compPieces[17] = new Piece(26, 1, 7);//6
+    compPieces[18] = new Piece(26, 1, 8);//6
+    compPieces[19] = new Piece(27, 1, 9);//7
+    compPieces[20] = new Piece(28, 2, 0);//8
+    compPieces[21] = new Piece(29, 2, 1);//9
+    compPieces[22] = new Piece(30, 2, 2);//10
+    compPieces[23] = new Bomb(32, 2, 3);
+    compPieces[24] = new Bomb(32, 2, 4);
+    compPieces[25] = new Bomb(32, 2, 5);
+    compPieces[26] = new Bomb(32, 2, 6);
+    compPieces[27] = new Bomb(32, 2, 7);
+    compPieces[28] = new Bomb(32, 2, 8);
+    compPieces[29] = new Spy(31, 2, 9);
+    playerPieces[0] = new Flag(13, 7, 0);
+    playerPieces[1] = new Spotter(1, 7, 1);
+    playerPieces[2] = new Spotter(1, 7, 2);
+    playerPieces[3] = new Scout(2, 7, 3);
+    playerPieces[4] = new Scout(2, 7, 4);
+    playerPieces[5] = new Scout(2, 7, 5);
+    playerPieces[6] = new Scout(2, 7, 6);
+    playerPieces[7] = new Scout(2, 7, 7);
+    playerPieces[8] = new Miner(3, 7, 8);
+    playerPieces[9] = new Miner(3, 7, 9);
+    playerPieces[10] = new Miner(3, 6, 0);
+    playerPieces[11] = new Miner(3, 6, 1);
+    playerPieces[12] = new Miner(3, 6, 2);
+    playerPieces[13] = new Piece(4, 6, 3);//4
+    playerPieces[14] = new Piece(4, 6, 4);//4
+    playerPieces[15] = new Piece(5, 6, 5);//5
+    playerPieces[16] = new Piece(5, 6, 6);//5
+    playerPieces[17] = new Piece(6, 6, 7);//6
+    playerPieces[18] = new Piece(6, 6, 8);//6
+    playerPieces[19] = new Piece(7, 6, 9);//7
+    playerPieces[20] = new Piece(8, 5, 0);//8
+    playerPieces[21] = new Piece(9, 5, 1);//9
+    playerPieces[22] = new Piece(10, 5, 2);//10
+    playerPieces[23] = new Bomb(12, 5, 3);
+    playerPieces[24] = new Bomb(12, 5, 4);
+    playerPieces[25] = new Bomb(12, 5, 5);
+    playerPieces[26] = new Bomb(12, 5, 6);
+    playerPieces[27] = new Bomb(12, 5, 7);
+    playerPieces[28] = new Bomb(12, 5, 8);
+    playerPieces[29] = new Spy(11, 5, 9);
     Board grid = new Board(8,10);
-    //Piece[] compPieces = new Piece[30];
-    //Piece[] playerPieces = new Piece[30];
-    //for(int i=0; i<30; i++){
-    //  compPieces[i] = new piece(i;i;i;true)
-    //}
-    //for(int i=0; i<30; i++){
-    //  playerPieces[i] = new piece(i;i;i;false)
-    //}
     boolean hasWon = false;
-    Piece test = new Piece(5,1,1,true);//replace with method to set up board
     while(!hasWon){
       grid.prepBoard();
-      test.move(2);//replace with methods that move for both players
-      grid.draw(3,test.getRow(),test.getColumn());//replace with method that draws all pieces
+      for(int i=0;i<30;i++){
+        grid.draw(compPieces[i]);
+        grid.draw(playerPieces[i]);
+      }
+      hasWon = true;
       grid.print();
     }
   }
