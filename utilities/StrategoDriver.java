@@ -8,11 +8,11 @@ public class StrategoDriver{
     UserInterface player = new UserInterface();
     Strategy compPlayer = new Strategy();
     //Piece[] compPieces = new Piece[30];
-    ArrayList<Piece> compPieces = new ArrayList<Piece>(30);
+    ArrayList<Piece> compPieces = new ArrayList<Piece>();
     //Piece[] playerPieces = new Piece[30];
-    ArrayList<Piece> playerPieces = new ArrayList<Piece>(30);
-    compPieces = compPlayer.setUpBoard();
-    playerPieces = player.setUpBoard();
+    ArrayList<Piece> playerPieces = new ArrayList<Piece>();
+    compPieces.addAll(compPlayer.setUpBoard());
+    playerPieces.addAll(player.setUpBoard());
     Board grid = new Board(8,10);
     boolean hasWon = false;
     while(!hasWon){
