@@ -1,5 +1,6 @@
 package utilities;
 import utilities.Piece;
+import java.util.Scanner;
 import java.util.ArrayList;
 public class UserInterface{
   public ArrayList<Piece> setUpBoard(){
@@ -35,5 +36,21 @@ public class UserInterface{
     output.add(28, new Bomb(12, 5, 8));
     output.add(29, new Spy(11, 5, 9));
     return output;
+  }
+  public Move turn(ArrayList<Move> input){
+    Scanner kb = new Scanner(System.in);//kb.nextLine();
+    System.out.println("Enter Move");
+    int or = kb.nextInt();
+    int oc = kb.nextInt();
+    int nr = kb.nextInt();
+    int nc = kb.nextInt();
+    while(1==1){
+      for(int i=0; i<input.size(); i++){
+        if(or==input.get(i).getFromRow() && oc==input.get(i).getFromColumn() && nr==input.get(i).getToRow() && nc==input.get(i).getToColumn()){
+          return input.get(i);
+        }
+        else System.out.println("Not a valid move");
+      }
+    }
   }
 }

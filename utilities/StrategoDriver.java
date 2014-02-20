@@ -7,15 +7,29 @@ public class StrategoDriver{
   public static void main(String[] args){
     UserInterface player = new UserInterface();
     Strategy compPlayer = new Strategy();
-    //Piece[] compPieces = new Piece[30];
     ArrayList<Piece> compPieces = new ArrayList<Piece>();
-    //Piece[] playerPieces = new Piece[30];
     ArrayList<Piece> playerPieces = new ArrayList<Piece>();
     compPieces.addAll(compPlayer.setUpBoard());
     playerPieces.addAll(player.setUpBoard());
     Board grid = new Board(8,10);
+    for(int i=0;i<compPieces.size();i++){
+      grid.draw(compPieces.get(i));
+    }
+    for(int i=0;i<playerPieces.size();i++){
+      grid.draw(playerPieces.get(i));
+    }
+    grid.print();
     boolean hasWon = false;
+    boolean turn = true;
     while(!hasWon){
+      if(turn){
+        ArrayList<Move> listOfMoves = new ArrayList<Move>();
+        for(int i=0; i<playerPieces.size();i++){
+          listOfMoves.addAll(playerPieces.get(i).getMoves());
+        }
+        //compPlayer.turn(listOfMoves); returns the move to act upon
+        //turn = false;
+      }
       grid.prepBoard();
       for(int i=0;i<compPieces.size();i++){
         grid.draw(compPieces.get(i));
@@ -23,7 +37,6 @@ public class StrategoDriver{
       for(int i=0;i<playerPieces.size();i++){
         grid.draw(playerPieces.get(i));
       }
-      hasWon = true;
       grid.print();
     }
   }

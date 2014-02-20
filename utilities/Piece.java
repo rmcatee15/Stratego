@@ -1,5 +1,6 @@
 package utilities;
 import utilities.Board;
+import java.util.ArrayList;
 public class Piece{
   int type, row, column, value;
   boolean hasShown = false;
@@ -35,5 +36,20 @@ public class Piece{
   public int getColumn(){return column;}
   public int getType(){
     return type;
+  }
+  public ArrayList<Move> getMoves(){
+    ArrayList<Move> output = new ArrayList<Move>();
+    for(int i = 1; i<=4; i++){
+      int newRow = row;
+      int newColumn = column;
+      if(i == 1) newRow-=1;
+      else if(i == 2) newColumn+=1;
+      else if(i == 3) newRow+=1;
+      else if(i == 4) newColumn-=1;
+      if(Board.isValid(newRow, newColumn)){
+        output.add(new Move(newRow, newColumn, row, column));
+      }
+    }
+    return output;
   }
 }
