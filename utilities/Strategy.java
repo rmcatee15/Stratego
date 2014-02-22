@@ -36,4 +36,8 @@ public class Strategy{
     output.add(29, new Spy(31, 2, 9));
     return output;
   }
+  public Move turn(ArrayList<Move> input){
+    int x = (int)Math.random()*input.size()+1;
+    return input.get(x);
+  }
 }

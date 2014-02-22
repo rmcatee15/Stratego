@@ -1,4 +1,5 @@
 package utilities;
+import java.util.*;
 public class Board{
   int[][] grid;
   public Board(int rows, int columns){
@@ -48,7 +49,41 @@ public class Board{
     if((row==3 || row==4) && (column==2 || column==3 || column==6 || column==7)) return false;
     return true;
   }
+  public boolean isOccupiedPlayer(int row, int column){
+    if(grid[row][column]>=1 && grid[row][column]<=13){
+      return true;
+    }
+    return false;
+  }
+  public boolean isOccupiedComp(int row, int column){
+    if(grid[row][column]<=33 && grid[row][column]>=21){
+      return true;
+    }
+    return false;
+  }
   public void draw(Piece p){
     grid[p.getRow()][p.getColumn()]=p.getType();
+  }
+  public Piece getPiece(ArrayList<Piece> listOfPieces, int r, int c){
+    for(int i=0; i<listOfPieces.size(); i++){
+      if(listOfPieces.get(i).getRow()==r && listOfPieces.get(i).getColumn()==c) return listOfPieces.get(i);
+    }
+    Piece output = new Piece(0,0,0);
+    return output;
+  }
+  public Piece battle(Piece pone, Piece ptwo){
+    int tone=pone.getType();
+    int ttwo=ptwo.getType();
+    if(tone>=21)tone-=20;
+    if(ttwo>=21)ttwo-=20;
+    Piece tie = new Piece(99,99,99);
+    if(tone==ttwo)return tie;
+    if(tone==3 && ttwo==12) return ptwo;
+    if(ttwo==12) return pone;
+    if(ttwo==13) return ptwo;
+    if(tone==11 && ttwo==10) return ptwo;
+    if(tone==11) return pone;
+    if(tone>ttwo) return ptwo;
+    else return pone;
   }
 }

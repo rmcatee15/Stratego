@@ -1,5 +1,6 @@
 package utilities;
 import utilities.Piece;
+import java.util.Scanner;
 import java.util.ArrayList;
 public class UserInterface{
   public ArrayList<Piece> setUpBoard(){
@@ -35,5 +36,43 @@ public class UserInterface{
     output.add(28, new Bomb(12, 5, 8));
     output.add(29, new Spy(11, 5, 9));
     return output;
+  }
+  public Move turn(ArrayList<Move> input){
+    Scanner kb = new Scanner(System.in);//kb.nextLine();
+    System.out.println("Enter Move");
+    //
+    System.out.print(input.get(0).getFromRow());
+    System.out.print(input.get(0).getFromColumn());
+    System.out.print(input.get(0).getToRow());
+    System.out.println(input.get(0).getToColumn());
+    System.out.print(input.get(1).getFromRow());
+    System.out.print(input.get(1).getFromColumn());
+    System.out.print(input.get(1).getToRow());
+    System.out.println(input.get(1).getToColumn());
+    System.out.print(input.get(2).getFromRow());
+    System.out.print(input.get(2).getFromColumn());
+    System.out.print(input.get(2).getToRow());
+    System.out.println(input.get(2).getToColumn());
+    System.out.print(input.get(3).getFromRow());
+    System.out.print(input.get(3).getFromColumn());
+    System.out.print(input.get(3).getToRow());
+    System.out.println(input.get(3).getToColumn());
+    System.out.print(input.get(4).getFromRow());
+    System.out.print(input.get(4).getFromColumn());
+    System.out.print(input.get(4).getToRow());
+    System.out.println(input.get(4).getToColumn());
+    //
+    while(1==1){
+      int or = kb.nextInt()-1;
+      int oc = kb.nextInt()-1;
+      int nr = kb.nextInt()-1;
+      int nc = kb.nextInt()-1;
+      for(int i=0; i<input.size(); i++){
+        if(or==input.get(i).getFromRow() && oc==input.get(i).getFromColumn() && nr==input.get(i).getToRow() && nc==input.get(i).getToColumn()){
+          return input.get(i);
+        }
+      }
+      System.out.println("Not a valid move");
+    }
   }
 }

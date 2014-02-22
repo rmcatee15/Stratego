@@ -48,7 +48,19 @@ public class Board{
     if((row==3 || row==4) && (column==2 || column==3 || column==6 || column==7)) return false;
     return true;
   }
-  public void draw(int type, int row, int column){
-    grid[row][column]=type;
+  public boolean isOccupiedPlayer(int row, int column){
+    if(grid[row][column]<=1 && grid[row][column]>=13){
+      return true;
+    }
+    return false;
+  }
+  public boolean isOccupiedComp(int row, int column){
+    if(grid[row][column]<=33 && grid[row][column]>=21){
+      return true;
+    }
+    return false;
+  }
+  public void draw(Piece p){
+    grid[p.getRow()][p.getColumn()]=p.getType();
   }
 }
