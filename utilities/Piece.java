@@ -1,6 +1,6 @@
 package utilities;
 import utilities.Board;
-import java.util.ArrayList;
+import java.util.*;
 public class Piece{
   int type, row, column, value;
   boolean hasShown = false;

@@ -10,11 +10,14 @@ public class Move{
     if(toColumn>fromColumn) direction=2;
     if(toColumn<fromColumn) direction=4;
   }
+  int numberOfTimes = 1;
   int fromRow;
   int fromColumn;
   int toRow;
   int toColumn;
   int direction;
+  public void setNumberOfTimes(int x){numberOfTimes=x;}
+  public int getNumberOfTimes(){return numberOfTimes;}
   public int getFromRow(){return fromRow;}
   public int getFromColumn(){return fromColumn;}
   public int getToRow(){return toRow;}

@@ -1,67 +1,78 @@
 package utilities;
 import utilities.Piece;
+import utilities.Randomizer;
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.*;
 public class UserInterface{
   public ArrayList<Piece> setUpBoard(){
     ArrayList<Piece> output = new ArrayList<Piece>(30);
-    output.add(0, new Flag(13, 7, 0));
-    output.add(1, new Spotter(1, 7, 1));
-    output.add(2, new Spotter(1, 7, 2));
-    output.add(3, new Scout(2, 7, 3));
-    output.add(4, new Scout(2, 7, 4));
-    output.add(5, new Scout(2, 7, 5));
-    output.add(6, new Scout(2, 7, 6));
-    output.add(7, new Scout(2, 7, 7));
-    output.add(8, new Miner(3, 7, 8));
-    output.add(9, new Miner(3, 7, 9));
-    output.add(10, new Miner(3, 6, 0));
-    output.add(11, new Miner(3, 6, 1));
-    output.add(12, new Miner(3, 6, 2));
-    output.add(13, new Piece(4, 6, 3));//4
-    output.add(14, new Piece(4, 6, 4));//4
-    output.add(15, new Piece(5, 6, 5));//5
-    output.add(16, new Piece(5, 6, 6));//5
-    output.add(17, new Piece(6, 6, 7));//6
-    output.add(18, new Piece(6, 6, 8));//6
-    output.add(19, new Piece(7, 6, 9));//7
-    output.add(20, new Piece(8, 5, 0));//8
-    output.add(21, new Piece(9, 5, 1));//9
-    output.add(22, new Piece(10, 5, 2));//10
-    output.add(23, new Bomb(12, 5, 3));
-    output.add(24, new Bomb(12, 5, 4));
-    output.add(25, new Bomb(12, 5, 5));
-    output.add(26, new Bomb(12, 5, 6));
-    output.add(27, new Bomb(12, 5, 7));
-    output.add(28, new Bomb(12, 5, 8));
-    output.add(29, new Spy(11, 5, 9));
+    Randomizer randomGenerator = new Randomizer();
+    int[] randomLoc = new int[2];
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(0, new Flag(13, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(1, new Spotter(1, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(2, new Spotter(1, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(3, new Scout(2, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(4, new Scout(2, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(5, new Scout(2, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(6, new Scout(2, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(7, new Scout(2, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(8, new Miner(3, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(9, new Miner(3, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(10, new Miner(3, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(11, new Miner(3, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(12, new Miner(3, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(13, new Piece(4, randomLoc[0]+5, randomLoc[1]));//4
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(14, new Piece(4, randomLoc[0]+5, randomLoc[1]));//4
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(15, new Piece(5, randomLoc[0]+5, randomLoc[1]));//5
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(16, new Piece(5, randomLoc[0]+5, randomLoc[1]));//5
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(17, new Piece(6, randomLoc[0]+5, randomLoc[1]));//6
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(18, new Piece(6, randomLoc[0]+5, randomLoc[1]));//6
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(19, new Piece(7, randomLoc[0]+5, randomLoc[1]));//7
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(20, new Piece(8, randomLoc[0]+5, randomLoc[1]));//8
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(21, new Piece(9, randomLoc[0]+5, randomLoc[1]));//9
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(22, new Piece(10, randomLoc[0]+5, randomLoc[1]));//10
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(23, new Bomb(12, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(24, new Bomb(12, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(25, new Bomb(12, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(26, new Bomb(12, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(27, new Bomb(12, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(28, new Bomb(12, randomLoc[0]+5, randomLoc[1]));
+    randomLoc = randomGenerator.getRandomLoc();
+    output.add(29, new Spy(11, randomLoc[0]+5, randomLoc[1]));
     return output;
   }
   public Move turn(ArrayList<Move> input){
     Scanner kb = new Scanner(System.in);//kb.nextLine();
     System.out.println("Enter Move");
-    //
-    System.out.print(input.get(0).getFromRow());
-    System.out.print(input.get(0).getFromColumn());
-    System.out.print(input.get(0).getToRow());
-    System.out.println(input.get(0).getToColumn());
-    System.out.print(input.get(1).getFromRow());
-    System.out.print(input.get(1).getFromColumn());
-    System.out.print(input.get(1).getToRow());
-    System.out.println(input.get(1).getToColumn());
-    System.out.print(input.get(2).getFromRow());
-    System.out.print(input.get(2).getFromColumn());
-    System.out.print(input.get(2).getToRow());
-    System.out.println(input.get(2).getToColumn());
-    System.out.print(input.get(3).getFromRow());
-    System.out.print(input.get(3).getFromColumn());
-    System.out.print(input.get(3).getToRow());
-    System.out.println(input.get(3).getToColumn());
-    System.out.print(input.get(4).getFromRow());
-    System.out.print(input.get(4).getFromColumn());
-    System.out.print(input.get(4).getToRow());
-    System.out.println(input.get(4).getToColumn());
-    //
     while(1==1){
       int or = kb.nextInt()-1;
       int oc = kb.nextInt()-1;

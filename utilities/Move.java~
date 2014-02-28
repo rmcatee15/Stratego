@@ -3,7 +3,7 @@ public class Move{
   public Move(int fr, int fc, int tr, int tc){
     fromRow = fr;
     fromColumn = fc;
-    toRow = tc;
+    toRow = tr;
     toColumn = tc;
     if(toRow>fromRow) direction=3;
     if(toRow<fromRow) direction=1;

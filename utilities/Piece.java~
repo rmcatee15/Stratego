@@ -48,14 +48,15 @@ public class Piece{
       else if(i == 2) newColumn += 1;
       else if(i == 3) newRow += 1;
       else if(i == 4) newColumn -= 1;
-      if(Board.isValid(newRow, newColumn) && !grid.isOccupiedPlayer(newRow, newColumn)){
-        output.add(new Move(row, column, newRow, newColumn));
-        //
-        System.out.print(row);
-        System.out.print(column);
-        System.out.print(newRow);
-        System.out.println(newColumn);
-        //
+      if(type>=1 && type<=13){
+        if(Board.isValid(newRow, newColumn) && !grid.isOccupiedPlayer(newRow, newColumn)){
+          output.add(new Move(row, column, newRow, newColumn));
+        }
+      }
+      else if(type>=21 &&type<=33){
+        if(Board.isValid(newRow, newColumn) && !grid.isOccupiedComp(newRow, newColumn)){
+          output.add(new Move(row, column, newRow, newColumn));
+        }
       }
     }
     return output;

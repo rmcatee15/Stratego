@@ -1,5 +1,6 @@
 package utilities;
-import java.util.ArrayList;
+import java.util.*;
+import utilities.Randomizer;
 import utilities.Board;
 import utilities.Piece;
 import utilities.UserInterface;
@@ -12,6 +13,7 @@ public class StrategoDriver{
     compPieces.addAll(compPlayer.setUpBoard());
     playerPieces.addAll(player.setUpBoard());
     Board grid = new Board(8,10);
+    grid.prepBoard();
     for(int i=0;i<compPieces.size();i++){
       grid.draw(compPieces.get(i));
     }
@@ -38,8 +40,10 @@ public class StrategoDriver{
               }
               else playerPieces.remove(grid.battle(playerPieces.get(i), grid.getPiece(compPieces, nextMove.getFromRow(), nextMove.getFromColumn())));
             }
-            playerPieces.get(i).move(nextMove.getDirection());
-            i=playerPieces.size();
+            for(int j=1;j<=nextMove.getNumberOfTimes();j++){
+              playerPieces.get(i).move(nextMove.getDirection());
+            }
+          i=playerPieces.size();
           }
         }
         turn = false;
@@ -60,7 +64,9 @@ public class StrategoDriver{
               }
               else compPieces.remove(grid.battle(compPieces.get(i), grid.getPiece(playerPieces, nextMove.getFromRow(), nextMove.getFromColumn())));
             }
-            compPieces.get(i).move(nextMove.getDirection());
+            for(int j=1;j<=nextMove.getNumberOfTimes();j++){
+              playerPieces.get(i).move(nextMove.getDirection());
+            }
             i=compPieces.size();
           }
         }
