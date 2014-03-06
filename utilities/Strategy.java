@@ -8,7 +8,7 @@ public class Strategy{
     Randomizer randomGenerator = new Randomizer();
     int[] randomLoc = new int[2];
     randomLoc = randomGenerator.getRandomLoc();
-    output.add(0, new Flag(33, randomLoc[0], randomLoc[1]));
+    output.add(0, new Flag(33, 3, 1));
     randomLoc = randomGenerator.getRandomLoc();
     output.add(1, new Spotter(21, randomLoc[0], randomLoc[1]));
     randomLoc = randomGenerator.getRandomLoc();
@@ -71,6 +71,7 @@ public class Strategy{
   }
   public Move turn(ArrayList<Move> input){
     int x = (int)Math.random()*input.size()+1;
+    if(input.size()==0) return new Move(99,99,99,99);
     return input.get(x);
   }
 }

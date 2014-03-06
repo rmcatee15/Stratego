@@ -20,13 +20,17 @@ public class Scout extends Piece{
         else if(i == 4) newColumn -= 1;
         if(type>=1 && type<=13){
           if(Board.isValid(newRow, newColumn) && !grid.isOccupiedPlayer(newRow, newColumn)){
-            output.add(new Move(row, column, newRow, newColumn));
+            Move toAdd = new Move(row, column, newRow, newColumn);
+            toAdd.setNumberOfTimes(j+1);
+            output.add(toAdd);
           }
           else j=9;
         }
         else if(type>=21 &&type<=33){
           if(Board.isValid(newRow, newColumn) && !grid.isOccupiedComp(newRow, newColumn)){
-            output.add(new Move(row, column, newRow, newColumn));
+            Move toAdd = new Move(row, column, newRow, newColumn);
+            toAdd.setNumberOfTimes(j+1);
+            output.add(toAdd);
           }
           else j=9;
         }
