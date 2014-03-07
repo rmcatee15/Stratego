@@ -84,6 +84,7 @@ public class Board{
     if(tone==11 && ttwo==10) return ptwo;
     if(tone==11) return pone;
     if(tone>ttwo) return ptwo;
+    if(ttwo>tone) return pone;
     else return pone;
   }
 }

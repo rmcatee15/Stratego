@@ -11,7 +11,10 @@ public class Board{
     }
   }
   public void print(){
+    int k = 8;
     for(int i=0; i<grid.length; i++){
+      System.out.print(k + "   ");
+      k--;
       for(int j=0; j<grid[i].length; j++){
         if(j==grid[i].length-1) System.out.println(toPiece(grid[i][j]));
         else{
@@ -20,6 +23,8 @@ public class Board{
         }
       }
     }
+    System.out.println(" ");
+    System.out.println("    1 2 3 4 5 6 7 8 9 10");
     System.out.println(" ");
   }
   private String toPiece(int character){
