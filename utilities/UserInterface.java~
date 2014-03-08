@@ -71,13 +71,14 @@ public class UserInterface{
     return output;
   }
   public Move turn(ArrayList<Move> input){
+    if(input.size()==0) return new Move(99,99,99,99);
     Scanner kb = new Scanner(System.in);//kb.nextLine();
     System.out.println("Enter Move");
     while(1==1){
-      int or = kb.nextInt()-1;
       int oc = kb.nextInt()-1;
-      int nr = kb.nextInt()-1;
+      int or = swap(kb.nextInt()-1);
       int nc = kb.nextInt()-1;
+      int nr = swap(kb.nextInt()-1);
       for(int i=0; i<input.size(); i++){
         if(or==input.get(i).getFromRow() && oc==input.get(i).getFromColumn() && nr==input.get(i).getToRow() && nc==input.get(i).getToColumn()){
           return input.get(i);
@@ -85,5 +86,14 @@ public class UserInterface{
       }
       System.out.println("Not a valid move");
     }
+  }
+  private int swap(int input){
+    int output = 0;
+    int total = 7;
+    for(int i=0; i<8;i++){
+      if(input == i) output=total;
+      total--;
+    }
+    return output;
   }
 }

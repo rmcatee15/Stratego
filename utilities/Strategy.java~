@@ -8,7 +8,7 @@ public class Strategy{
     Randomizer randomGenerator = new Randomizer();
     int[] randomLoc = new int[2];
     randomLoc = randomGenerator.getRandomLoc();
-    output.add(0, new Flag(33, 3, 1));
+    output.add(0, new Flag(33, randomLoc[0], randomLoc[1]));
     randomLoc = randomGenerator.getRandomLoc();
     output.add(1, new Spotter(21, randomLoc[0], randomLoc[1]));
     randomLoc = randomGenerator.getRandomLoc();
