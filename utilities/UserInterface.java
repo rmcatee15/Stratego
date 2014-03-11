@@ -70,7 +70,7 @@ public class UserInterface{
     output.add(29, new Spy(11, randomLoc[0]+5, randomLoc[1]));
     return output;
   }
-  /*public Move turn(ArrayList<Move> input){
+  public Move turn(ArrayList<Move> input){
     if(input.size()==0) return new Move(99,99,99,99);
     Scanner kb = new Scanner(System.in);//kb.nextLine();
     System.out.println("Enter Move");
@@ -86,12 +86,12 @@ public class UserInterface{
       }
       System.out.println("Not a valid move");
     }
-  }*/
-  public Move turn(ArrayList<Move> input){
+  }
+  /*public Move turn(ArrayList<Move> input){
     int x = (int)(Math.random()*input.size());
     if(input.size()==0) return new Move(99,99,99,99);
     return input.get(x);
-  }
+  }*/
   private int swap(int input){
     int output = 0;
     int total = 7;
