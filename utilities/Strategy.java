@@ -10,9 +10,9 @@ public class Strategy{
     randomLoc = randomGenerator.getRandomLoc();
     output.add(0, new Flag(33, randomLoc[0], randomLoc[1]));
     randomLoc = randomGenerator.getRandomLoc();
-    output.add(1, new Spotter(21, randomLoc[0], randomLoc[1]));
+    output.add(1, new Spy(31, randomLoc[0], randomLoc[1]));
     randomLoc = randomGenerator.getRandomLoc();
-    output.add(2, new Spotter(21, randomLoc[0], randomLoc[1]));
+    output.add(2, new Spy(31, randomLoc[0], randomLoc[1]));
     randomLoc = randomGenerator.getRandomLoc();
     output.add(3, new Scout(22, randomLoc[0], randomLoc[1]));
     randomLoc = randomGenerator.getRandomLoc();

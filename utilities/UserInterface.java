@@ -11,9 +11,9 @@ public class UserInterface{
     randomLoc = randomGenerator.getRandomLoc();
     output.add(0, new Flag(13, randomLoc[0]+5, randomLoc[1]));
     randomLoc = randomGenerator.getRandomLoc();
-    output.add(1, new Spotter(1, randomLoc[0]+5, randomLoc[1]));
+    output.add(1, new Spy(11, randomLoc[0]+5, randomLoc[1]));
     randomLoc = randomGenerator.getRandomLoc();
-    output.add(2, new Spotter(1, randomLoc[0]+5, randomLoc[1]));
+    output.add(2, new Spy(11, randomLoc[0]+5, randomLoc[1]));
     randomLoc = randomGenerator.getRandomLoc();
     output.add(3, new Scout(2, randomLoc[0]+5, randomLoc[1]));
     randomLoc = randomGenerator.getRandomLoc();

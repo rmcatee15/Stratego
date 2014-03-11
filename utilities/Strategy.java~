@@ -70,7 +70,7 @@ public class Strategy{
     return output;
   }
   public Move turn(ArrayList<Move> input){
-    int x = (int)Math.random()*input.size()+1;
+    int x = (int)(Math.random()*input.size());
     if(input.size()==0) return new Move(99,99,99,99);
     return input.get(x);
   }
